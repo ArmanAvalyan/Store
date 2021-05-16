@@ -8,7 +8,7 @@ public class Store {
     private int productNumber;
 
 
-    public Store(int countOfWorkers, String name, int phoneNumber, int productNumber){
+    public Store(int countOfWorkers, String name, int phoneNumber, int productNumber) {
         setCountOfWorkers(countOfWorkers);
         setName(name);
         setPhoneNumber(phoneNumber);
@@ -17,14 +17,17 @@ public class Store {
 
     @Override
     public String toString() {
-        return  "Count of workers - " + countOfWorkers + "\n" +
+        return "Count of workers - " + countOfWorkers + "\n" +
                 "Name - " + name + "\n" +
-                "Phone number - " + phoneNumber  + "\n" +
-                "Product number - " + productNumber  + "\n";
+                "Phone number - " + phoneNumber + "\n" +
+                "Product number - " + productNumber + "\n";
     }
 
     public void selling() {
-        setProductNumber(getProductNumber() - 1);
+        if (getProductNumber() > 0)
+            setProductNumber(getProductNumber() - 1);
+        else
+            System.out.println("Not");
     }
 
     public int getCountOfWorkers() {
