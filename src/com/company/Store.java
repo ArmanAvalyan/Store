@@ -37,7 +37,8 @@ public class Store {
     public void setCountOfWorkers(int countOfWorkers) {
         if (countOfWorkers >= 2 && countOfWorkers <= 50)
             this.countOfWorkers = countOfWorkers;
-        System.out.println("Incorrect number of workers");
+        else
+            System.out.println("Incorrect count of workers");
     }
 
     public String getName() {
