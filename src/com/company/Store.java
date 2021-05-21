@@ -17,17 +17,17 @@ public class Store {
 
     @Override
     public String toString() {
-        return "Count of workers - " + countOfWorkers + "\n" +
-                "Name - " + name + "\n" +
-                "Phone number - " + phoneNumber + "\n" +
-                "Product number - " + productNumber + "\n";
+        return "Count of workers - " + getCountOfWorkers() + "\n" +
+                "Name - " + getName() + "\n" +
+                "Phone number - " + getPhoneNumber() + "\n" +
+                "Product number - " + getProductNumber() + "\n";
     }
 
     public void selling() {
         if (getProductNumber() > 0)
             setProductNumber(getProductNumber() - 1);
         else
-            System.out.println("Not");
+            System.out.println("Product is over");
     }
 
     public int getCountOfWorkers() {
@@ -37,6 +37,7 @@ public class Store {
     public void setCountOfWorkers(int countOfWorkers) {
         if (countOfWorkers >= 2 && countOfWorkers <= 50)
             this.countOfWorkers = countOfWorkers;
+        System.out.println("Incorrect number of workers");
     }
 
     public String getName() {
@@ -46,6 +47,8 @@ public class Store {
     public void setName(String name) {
         if (name.length() >= 3)
             this.name = name;
+        else
+            System.out.println("Incorrect name");
     }
 
     public int getPhoneNumber() {
@@ -55,6 +58,8 @@ public class Store {
     public void setPhoneNumber(int phoneNumber) {
         if (String.valueOf(phoneNumber).length() == 8)
             this.phoneNumber = phoneNumber;
+        else
+            System.out.println("Incorrect phone number");
     }
 
     public int getProductNumber() {
